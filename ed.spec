@@ -1,7 +1,7 @@
 Summary: A line-oriented text editor
 Name: ed
 Version: 1.14.2
-Release: 5
+Release: 6
 License: GPLv3+ and GFDL
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
@@ -40,10 +40,10 @@ Man pages and other related documents.
 %make_install
 rm -vrf %{buildroot}%{_infodir}/dir
 
-%post
+%post help
 /sbin/install-info %{_infodir}/%{name}.info %{_infodir}/dir || :
 
-%preun
+%preun help
 if [ $1 = 0 ] ; then
   /sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/dir || :
 fi
@@ -60,5 +60,8 @@ fi
 %{_infodir}/ed.info*
 
 %changelog
+* Tue Jan 21 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.14.2-6
+- resolve "rpm -ivh" err
+
 * Tue Sep 17 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.14.2-5
 - Package init
