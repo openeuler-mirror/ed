@@ -1,8 +1,8 @@
 Summary: A line-oriented text editor
 Name: ed
-Version: 1.14.2
-Release: 6
-License: GPLv3+ and GFDL
+Version: 1.17
+Release: 1
+License: GPLv3+ and GFDL-1.3
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
 Source: %{name}-%{version}.tar.xz
@@ -60,6 +60,9 @@ fi
 %{_infodir}/ed.info*
 
 %changelog
+* Mon Feb 08 2021 shixuantng <shixuantong@huawei.com> - 1.17-1
+- upgrade version to 1.17 and upgrade GFDL license
+
 * Tue Jan 21 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.14.2-6
 - resolve "rpm -ivh" err
 
