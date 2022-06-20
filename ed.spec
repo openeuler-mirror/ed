@@ -1,6 +1,6 @@
 Summary: A line-oriented text editor
 Name: ed
-Version: 1.17
+Version: 1.18
 Release: 1
 License: GPLv3+ and GFDL-1.3
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
@@ -54,12 +54,15 @@ fi
 %{_bindir}/red
 
 %files help
-%doc ChangeLog NEWS README TODO AUTHORS
+%doc ChangeLog NEWS README AUTHORS
 %{_mandir}/man1/ed.1*
 %{_mandir}/man1/red.1*
 %{_infodir}/ed.info*
 
 %changelog
+* Mon Jun 20 2022 dillon chen <dillon.chen@gmail.com> - 1.18-1
+- update to 1.18
+
 * Mon Feb 08 2021 shixuantng <shixuantong@huawei.com> - 1.17-1
 - upgrade version to 1.17 and upgrade GFDL license
 
