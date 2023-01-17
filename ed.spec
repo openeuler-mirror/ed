@@ -1,11 +1,11 @@
 Summary: A line-oriented text editor
 Name: ed
-Version: 1.18
+Version: 1.19
 Release: 1
 License: GPLv3+ and GFDL-1.3
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
-Source: %{name}-%{version}.tar.xz
+Source: %{name}-%{version}.tar.lz
 URL:    http://www.gnu.org/software/ed/
 BuildRequires: gcc
 Requires(post): info
@@ -60,6 +60,9 @@ fi
 %{_infodir}/ed.info*
 
 %changelog
+* Tue Jan 17 2023 dillon chen <dillon.chen@gmail.com> - 1.19-1
+- update to 1.19
+
 * Mon Jun 20 2022 dillon chen <dillon.chen@gmail.com> - 1.18-1
 - update to 1.18
 
