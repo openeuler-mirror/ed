@@ -7,7 +7,7 @@ License: GPLv3+ and GFDL-1.3
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
 Source: %{name}-%{version}.tar.lz
 URL:    http://www.gnu.org/software/ed/
-BuildRequires: gcc
+BuildRequires: gcc lzip
 Requires(post): info
 Requires(preun): info
 
