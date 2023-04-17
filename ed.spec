@@ -1,7 +1,7 @@
 Summary: A line-oriented text editor
 Name: ed
 Version: 1.19
-Release: 1
+Release: 2
 License: GPLv3+ and GFDL-1.3
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
@@ -12,14 +12,14 @@ Requires(post): info
 Requires(preun): info
 
 %description
-GNU ed is a line-oriented text editor. It is used to create, display, modify and 
-otherwise manipulate text files, both interactively and via shell scripts. 
+GNU ed is a line-oriented text editor. It is used to create, display, modify and
+otherwise manipulate text files, both interactively and via shell scripts.
 
-A restricted version of ed, red, can only edit files in the current directory 
-and cannot execute shell commands. Ed is the "standard" text editor in the sense 
-that it is the original editor for Unix, and thus widely available. 
+A restricted version of ed, red, can only edit files in the current directory
+and cannot execute shell commands. Ed is the "standard" text editor in the sense
+that it is the original editor for Unix, and thus widely available.
 
-For most purposes, however, it is superseded by full-screen editors such as GNU 
+For most purposes, however, it is superseded by full-screen editors such as GNU
 Emacs or GNU Moe.
 
 %package        help
@@ -33,7 +33,7 @@ Man pages and other related documents.
 %setup -q
 
 %build
-%configure
+%configure CC=$CC
 %make_build CFLAGS="%{optflags}" LDFLAGS="%{__global_ldflags}"
 
 %install
@@ -60,6 +60,9 @@ fi
 %{_infodir}/ed.info*
 
 %changelog
+* Thu Apr 13 2023 SaltyFruit <saltyfruit255@gmail.com> - 1.19-2
+- Fix CC compiler support
+
 * Tue Jan 17 2023 dillon chen <dillon.chen@gmail.com> - 1.19-1
 - update to 1.19
 
