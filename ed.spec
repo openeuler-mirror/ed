@@ -1,7 +1,7 @@
 Summary: A line-oriented text editor
 Name: ed
 Version: 1.19
-Release: 1
+Release: 2
 License: GPLv3+ and GFDL-1.3
 # Note:  Upstream provides only lzip compressed tarballs so we repacked from:
 #Source: https://download.savannah.gnu.org/releases/ed/%{name}-%{version}.tar.lz
@@ -33,7 +33,7 @@ Man pages and other related documents.
 %setup -q
 
 %build
-%configure
+%configure CC=$CC
 %make_build CFLAGS="%{optflags}" LDFLAGS="%{__global_ldflags}"
 
 %install
@@ -60,6 +60,10 @@ fi
 %{_infodir}/ed.info*
 
 %changelog
+* Thu Apr 13 2023 Xiaoya Huang <huangxiaoya@iscas.ac.cn> - 1.19-2
+- Fix CC compiler support
+- Signed-off-by: shafeipaozi <sunbo.oerv@isrc.iscas.ac.cn>
+
 * Tue Jan 17 2023 dillon chen <dillon.chen@gmail.com> - 1.19-1
 - update to 1.19
 
